@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Cortaí — tema escuro compartilhado
+   Usado por: index, agenda, resumo, login, dashboard.
+   Cada página deve carregar Bootstrap 5.3 + este arquivo (e usar <html data-bs-theme="dark">).
+   Para mudar a cara do sistema inteiro, altere só as variáveis abaixo.
+   ========================================================================== */
+
+:root {
+    --cortai-bg:            #111516;
+    --cortai-surface:       #191e1f;
+    --cortai-border:        #303a3b;
+    --cortai-border-soft:   #293436;
+    --cortai-input-border:  #3b4547;
+    --cortai-accent:        #719999;
+    --cortai-accent-hover:  #86aaaa;
+    --cortai-text:          #f4f4f1;
+    --cortai-text-soft:     #c8cecc;
+    --cortai-muted:         #8f9997;
+    --cortai-danger-bg:     #3d1c1d;
+    --cortai-danger-border: #842029;
+    --cortai-danger-text:   #ea868f;
+    --cortai-radius:        12px;
+    --cortai-font:          'Montserrat', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--cortai-bg);
+    color: var(--cortai-text);
+    font-family: var(--cortai-font);
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ---------- Foco visível (teclado) ---------- */
+:focus-visible {
+    outline: 2px solid var(--cortai-accent-hover);
+    outline-offset: 2px;
+}
+
+/* ---------- Cartão padrão ---------- */
+.card-cortai {
+    background-color: var(--cortai-surface);
+    border: 1px solid var(--cortai-border);
+    border-radius: var(--cortai-radius);
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Títulos ---------- */
+.titulo { font-weight: 700; }
+.titulo span { color: var(--cortai-accent); }
+.subtitulo { color: var(--cortai-muted); font-size: 14px; }
+
+/* ---------- Formulários ---------- */
+.form-label { color: #dce1df; font-size: 14px; font-weight: 500; }
+
+.form-control,
+.form-select {
+    background-color: var(--cortai-bg);
+    border: 1px solid var(--cortai-input-border);
+    color: #fff;
+    border-radius: 6px;
+    padding: 12px 14px;
+    min-height: 46px;
+}
+.form-control::placeholder { color: #7b8583; }
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--cortai-bg);
+    color: #fff;
+    border-color: var(--cortai-accent);
+    box-shadow: 0 0 0 0.15rem rgba(113, 153, 153, 0.2);
+}
+.form-control:disabled,
+.form-select:disabled {
+    background-color: #151a1b;
+    color: #6b7573;
+    cursor: not-allowed;
+}
+.form-select option { background-color: var(--cortai-bg); color: #fff; }
+
+/* ---------- Botões ---------- */
+.btn-cortai {
+    background-color: var(--cortai-accent);
+    border: 1px solid var(--cortai-accent);
+    color: var(--cortai-bg);
+    font-weight: 700;
+    padding: 13px 16px;
+    min-height: 48px;
+    border-radius: 6px;
+    transition: background-color .2s, border-color .2s;
+}
+.btn-cortai:hover,
+.btn-cortai:focus-visible { background-color: var(--cortai-accent-hover); border-color: var(--cortai-accent-hover); color: var(--cortai-bg); }
+.btn-cortai:disabled { background-color: #3d4f4f; border-color: #3d4f4f; color: #8a9797; cursor: not-allowed; opacity: 1; }
+
+.btn-cortai-outline {
+    background: transparent;
+    border: 1px solid var(--cortai-input-border);
+    color: var(--cortai-muted);
+    border-radius: 6px;
+    min-height: 44px;
+    transition: color .2s, border-color .2s;
+}
+.btn-cortai-outline:hover { color: #fff; border-color: var(--cortai-accent); background: transparent; }
+
+.btn-voltar { color: var(--cortai-muted); border: 1px solid var(--cortai-input-border); text-decoration: none; }
+.btn-voltar:hover { color: var(--cortai-accent); background-color: var(--cortai-surface); border-color: var(--cortai-accent); }
+
+/* ---------- Avisos ---------- */
+.alert-cortai {
+    background-color: var(--cortai-danger-bg);
+    border: 1px solid var(--cortai-danger-border);
+    color: var(--cortai-danger-text);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+/* ---------- Barras de navegação ---------- */
+.navbar-cortai { background-color: var(--cortai-bg); border-bottom: 1px solid var(--cortai-border-soft); padding: 15px 0; }
+.navbar-cortai .logo { height: 55px; width: auto; }
+.navbar-cortai .nav-link { color: var(--cortai-text-soft); font-size: 14px; margin-left: 20px; transition: color .2s; }
+.navbar-cortai .nav-link:hover { color: var(--cortai-accent); }
+
+.navbar-admin { background-color: var(--cortai-surface); border-bottom: 1px solid var(--cortai-border); padding: 12px 0; }
+.navbar-admin .navbar-brand { color: var(--cortai-accent); font-weight: 700; letter-spacing: 1px; }
+
+.btn-admin { border: 1px solid var(--cortai-input-border); color: var(--cortai-text-soft); background: transparent; }
+.btn-admin:hover { background-color: var(--cortai-accent); border-color: var(--cortai-accent); color: var(--cortai-bg); }
+
+/* ---------- Páginas ---------- */
+.pagina { padding-top: 40px; padding-bottom: 40px; }
+.pagina-centro { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.rodape { border-top: 1px solid var(--cortai-border-soft); padding: 18px 0; color: #7b8583; font-size: 12px; }
+
+/* ---------- Tabelas (dashboard) ---------- */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--cortai-text);
+    --bs-table-border-color: var(--cortai-border-soft);
+    --bs-table-hover-bg: rgba(113, 153, 153, 0.08);
+    --bs-table-hover-color: var(--cortai-text);
+}
+.table thead th { background-color: var(--cortai-accent); color: var(--cortai-bg); border: 0; padding: 12px; white-space: nowrap; }
+.table tbody td { padding: 14px 12px; }
+
+.card-resumo-valor { background-color: var(--cortai-bg); border: 1px solid var(--cortai-input-border); border-radius: 8px; padding: 14px 20px; display: inline-block; }
+.card-resumo-valor span { color: var(--cortai-accent); font-weight: 700; font-size: 20px; }
+
+/* ---------- Seleção de horário (agenda) ---------- */
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; }
+.slot-input { position: absolute; opacity: 0; pointer-events: none; }
+.slot {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 48px; border-radius: 6px; cursor: pointer;
+    background-color: var(--cortai-bg); border: 1px solid var(--cortai-input-border);
+    color: #fff; font-weight: 600; font-size: 15px; user-select: none;
+    transition: border-color .15s, background-color .15s;
+}
+.slot:hover { border-color: var(--cortai-accent); }
+.slot-input:checked + .slot { background-color: var(--cortai-accent); border-color: var(--cortai-accent); color: var(--cortai-bg); }
+.slot-input:focus-visible + .slot { outline: 2px solid var(--cortai-accent-hover); outline-offset: 2px; }
+.slots-aviso { color: var(--cortai-muted); font-size: 14px; margin: 0; padding: 12px 0; }
+
+/* ---------- Comprovante (resumo) ---------- */
+.icone-sucesso { font-size: 60px; color: #2fa36b; text-align: center; margin-bottom: 15px; line-height: 1; }
+.info-box { background-color: var(--cortai-bg); border: 1px solid var(--cortai-border-soft); border-radius: 10px; padding: 8px 20px; margin-bottom: 25px; }
+.info-item { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #222a2b; }
+.info-item:last-child { border-bottom: 0; }
+.info-item .label { color: var(--cortai-muted); }
+.info-item .valor { font-weight: 600; text-align: right; }
+.destaque-valor { color: var(--cortai-accent); font-size: 18px; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 575.98px) {
+    .card-cortai { padding: 24px 18px; }
+    .pagina { padding-top: 24px; padding-bottom: 24px; }
+    .navbar-cortai .logo { height: 44px; }
+    /* 16px evita o zoom automático do iOS ao tocar num campo */
+    .form-control, .form-select { font-size: 16px; }
+    .slots { grid-template-columns: repeat(3, 1fr); }
+
+    /* Tabela vira lista de cartões (cada <td> precisa de data-label) */
+    .table-stack thead { display: none; }
+    .table-stack tbody tr { display: block; background: var(--cortai-bg); border: 1px solid var(--cortai-border); border-radius: 10px; margin-bottom: 12px; padding: 6px 14px; }
+    .table-stack tbody td { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 0; border: 0; text-align: right; }
+    .table-stack tbody td::before { content: attr(data-label); color: var(--cortai-muted); font-weight: 500; text-align: left; }
+    .table-stack tbody td[colspan] { display: block; text-align: center; }
+    .table-stack tbody td[colspan]::before { content: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
+
+/* ---------- Impressão do comprovante ---------- */
+@media print {
+    body { background: #fff; color: #000; }
+    .card-cortai { background: #fff; border: 0; box-shadow: none; padding: 0; }
+    .no-print { display: none !important; }
+    .info-box { border: 1px solid #ccc; background: #fff; }
+    .info-item .valor, .destaque-valor, .info-item .label { color: #000; }
+}
+
+/* ---------- Complementos (telas administrativas) ---------- */
+.badge-ativo   { background-color: rgba(47, 163, 107, 0.18); color: #5fd29b; font-weight: 600; }
+.badge-inativo { background-color: rgba(234, 134, 143, 0.15); color: var(--cortai-danger-text); font-weight: 600; }
+
+.modal-content { background-color: var(--cortai-surface); border: 1px solid var(--cortai-border); border-radius: var(--cortai-radius); }
+.modal-header, .modal-footer { border-color: var(--cortai-border); }
+
+.form-check-input { background-color: var(--cortai-bg); border-color: var(--cortai-input-border); }
+.form-check-input:checked { background-color: var(--cortai-accent); border-color: var(--cortai-accent); }
+.form-check-label { color: var(--cortai-text-soft); }
+
+.table .btn-group .btn { min-width: 38px; }
+
+@media (max-width: 575.98px) {
+    .table-stack tbody td .btn-group { justify-content: flex-end; }
+    .navbar-admin .btn { flex: 1 1 auto; }
+}
+
+/* ---------- Tela de entrada ---------- */
+body{min-height:100vh;display:flex;flex-direction:column}
+.wrapper-split{flex-grow:1;display:flex;align-items:center;justify-content:center;padding:40px 15px}
+.card-split{width:100%;max-width:950px;padding:0;overflow:hidden}
+.col-banner{background:linear-gradient(135deg,#182223,#111516);padding:50px 40px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--cortai-border-soft)}
+.col-banner h2{font-size:36px;font-weight:700}.col-banner h2 span{color:var(--cortai-accent)}.col-banner p{color:#9da8a6;margin-top:15px;line-height:1.6}
+.col-form{padding:45px 40px}.col-form h3{font-weight:700;font-size:26px}
+.abas{display:flex;background:var(--cortai-bg);border:1px solid var(--cortai-border);padding:4px;border-radius:30px;margin-bottom:25px}
+.aba{flex:1;text-align:center;padding:10px 14px;border-radius:26px;font-size:13px;font-weight:600;color:var(--cortai-muted);text-decoration:none}
+.aba.active{background:var(--cortai-accent);color:var(--cortai-bg)}
+.campo-icone{position:relative;margin-bottom:18px}.campo-icone>i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--cortai-muted);font-size:18px}
+.campo-icone .form-control{padding-left:46px}
+.link-rodape{color:var(--cortai-accent);font-weight:600;text-decoration:none}
+.alert-sucesso{background:#14301f;border:1px solid #1f6b3e;color:#7fd6a3;border-radius:6px;padding:10px 14px;font-size:14px}
+@media(max-width:767.98px){.col-banner{padding:28px 22px;text-align:center;border-right:0;border-bottom:1px solid var(--cortai-border-soft)}.col-banner h2{font-size:26px}.col-form{padding:28px 20px}.wrapper-split{padding:20px 12px;align-items:flex-start}}
